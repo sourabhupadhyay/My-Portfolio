@@ -1,53 +1,89 @@
-import React, { useState } from 'react'
-import { AiOutlineHome } from 'react-icons/ai'
-import { BiUser } from 'react-icons/bi'
-import { FaLaptopCode } from 'react-icons/fa'
-import { GoChecklist } from 'react-icons/go'
-import { BiMessageSquareDetail } from 'react-icons/bi'
-import './navbar.css'
+import React, { useState } from 'react';
+import { AiOutlineHome } from 'react-icons/ai';
+import { BiUser } from 'react-icons/bi';
+import { FaLaptopCode } from 'react-icons/fa';
+import { GoChecklist } from 'react-icons/go';
+import { BiMessageSquareDetail } from 'react-icons/bi';
+import { motion } from 'framer-motion';
+import './navbar.css';
 
 const Navbar = () => {
-  const [active, setactive] = useState("#")
+  const [active, setActive] = useState("#");
+
+  const iconVariants = {
+    hover: {
+      scale: 1.2,
+      transition: {
+        duration: 0.3,
+        yoyo: Infinity
+      }
+    },
+    click: {
+      scale: 0.9,
+      transition: {
+        duration: 0.2,
+      }
+    }
+  };
+
   return (
     <nav>
-
-        <a href="#home"
-        onClick={() => setactive("#")}
+      <motion.a 
+        href="#home"
+        onClick={() => setActive("#")}
         className={active === "#" ? "active" : ""}
-        >
-            <AiOutlineHome />
-        </a>
+        variants={iconVariants}
+        whileHover="hover"
+        whileTap="click"
+      >
+        <AiOutlineHome />
+      </motion.a>
 
-        <a href="#about"
-         onClick={() => setactive("#about")}
-         className={active === "#about" ? "active" : ""}
-         >
-            <BiUser />
-        </a>
+      <motion.a 
+        href="#about"
+        onClick={() => setActive("#about")}
+        className={active === "#about" ? "active" : ""}
+        variants={iconVariants}
+        whileHover="hover"
+        whileTap="click"
+      >
+        <BiUser />
+      </motion.a>
 
-        <a href="#experience"
-         onClick={() => setactive("#experience")}
-         className={active === "#experience" ? "active" : ""}
-         >
-            <FaLaptopCode />
-        </a>
+      <motion.a 
+        href="#experience"
+        onClick={() => setActive("#experience")}
+        className={active === "#experience" ? "active" : ""}
+        variants={iconVariants}
+        whileHover="hover"
+        whileTap="click"
+      >
+        <FaLaptopCode />
+      </motion.a>
 
-        <a href="#projects"
-        onClick={() => setactive("#projects")}
+      <motion.a 
+        href="#projects"
+        onClick={() => setActive("#projects")}
         className={active === "#projects" ? "active" : ""}
-        >
-            <GoChecklist />
-        </a>
+        variants={iconVariants}
+        whileHover="hover"
+        whileTap="click"
+      >
+        <GoChecklist />
+      </motion.a>
 
-        <a href="#contact"
-        onClick={() => setactive("#contact")}
+      <motion.a 
+        href="#contact"
+        onClick={() => setActive("#contact")}
         className={active === "#contact" ? "active" : ""}
-        >
-            <BiMessageSquareDetail />
-        </a>
-
+        variants={iconVariants}
+        whileHover="hover"
+        whileTap="click"
+      >
+        <BiMessageSquareDetail />
+      </motion.a>
     </nav>
-  )
+  );
 }
 
-export default Navbar
+export default Navbar;

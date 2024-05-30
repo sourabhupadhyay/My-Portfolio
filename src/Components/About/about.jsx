@@ -1,4 +1,5 @@
 import React from "react";
+import { motion } from "framer-motion";
 import myImage from "/img/me2.jpg";
 import { GiGraduateCap } from "react-icons/gi";
 import { BsTelephoneForward } from "react-icons/bs";
@@ -12,40 +13,72 @@ const About = () => {
       <h2>About Me</h2>
 
       <div className="container about_container">
-        <div className="about_me">
+        <motion.div 
+          className="about_me"
+          initial={{ opacity: 0, x: -100 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 1 }}
+          viewport={{ once: true, amount: 0.5 }}
+        >
           <div className="about_me_image">
             <img src={myImage} alt="Sourabh" />
           </div>
-        </div>
+        </motion.div>
 
-        <div className="about_content">
+        <motion.div 
+          className="about_content"
+          initial={{ opacity: 0, x: 100 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 1 }}
+          viewport={{ once: true, amount: 0.5 }}
+        >
           <div className="about_cards">
-            <article className="about_card">
+            <motion.article 
+              className="about_card"
+              whileHover={{ scale: 1.1 }}
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              transition={{ duration: 0.5, delay: 0.3 }}
+              viewport={{ once: true }}
+            >
               <GiGraduateCap className="about_icon" />
               <h5>Degree</h5>
               <small>
                 B.tech. Computer Science <br />
-                <i>Poornima Institue Of Engeering and Technology</i>
+                <i>Poornima Institute Of Engineering and Technology</i>
               </small>
-            </article>
+            </motion.article>
 
-            <article className="about_card">
+            <motion.article 
+              className="about_card"
+              whileHover={{ scale: 1.1 }}
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              transition={{ duration: 0.5, delay: 0.5 }}
+              viewport={{ once: true }}
+            >
               <TfiWorld className="about_icon" />
               <h5>Location</h5>
               <small>Nohar, Rajasthan</small>
-            </article>
+            </motion.article>
 
-            <article className="about_card">
+            <motion.article 
+              className="about_card"
+              whileHover={{ scale: 1.1 }}
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              transition={{ duration: 0.5, delay: 0.7 }}
+              viewport={{ once: true }}
+            >
               <BsTelephoneForward className="about_icon" />
               <h5>Contact</h5>
               <small>
                 <ul>
                   <li>+91-9783976444</li>
                   <li>upadhyaysourabh12@gmail.com</li>
-                  <li></li>
                 </ul>
               </small>
-            </article>
+            </motion.article>
           </div>
           <p>
             I'm Sourabh Upadhyay, a Full-Stack developer passionate about
@@ -53,7 +86,7 @@ const About = () => {
             expertise spans MongoDB, Express.js, React.js, Node.js, Python, C++,
             and Django, with a focus on crafting solid backend architectures.
           </p>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

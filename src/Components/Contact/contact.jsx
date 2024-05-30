@@ -1,9 +1,10 @@
 import React, { useRef } from 'react';
+import { motion } from 'framer-motion';
 import emailjs from '@emailjs/browser';
 import { BsGithub } from 'react-icons/bs';
 import { MdOutlineEmail } from 'react-icons/md';
-import './contact.css';
 import Swal from 'sweetalert2';
+import './contact.css';
 
 const Contact = () => {
   const form = useRef();
@@ -43,7 +44,13 @@ const Contact = () => {
       <h2>Contact Me</h2>
 
       <div className="container contact_container">
-        <div className="contact_options">
+        <motion.div 
+          className="contact_options"
+          initial={{ opacity: 0, x: -100 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.5 }}
+          viewport={{ once: true, amount: 0.5 }}
+        >
           <article className="contact_option">
             <MdOutlineEmail className='contact_option_icon' />
             <h4>Email</h4>
@@ -57,13 +64,21 @@ const Contact = () => {
             <h5>github.com/sourabhupadhyay</h5>
             <a href="https://github.com/sourabhupadhyay">Open</a>
           </article>
-        </div>
-        <form ref={form} onSubmit={sendEmail}>
+        </motion.div>
+
+        <motion.form 
+          ref={form} 
+          onSubmit={sendEmail}
+          initial={{ opacity: 0, x: 100 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.5 }}
+          viewport={{ once: true, amount: 0.5 }}
+        >
           <input type="text" name='user_name' placeholder='Your Name' required />
           <input type="email" name='user_email' placeholder='Your Email' required />
           <textarea name="message" rows="7" placeholder='Your Message' required></textarea>
           <button type='submit' className='btn btn-primary'>Send Message</button>
-        </form>
+        </motion.form>
       </div>
     </section>
   );
