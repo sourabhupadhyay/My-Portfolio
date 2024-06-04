@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import video from "/img/video.jpg";
-import Event from "/img/Event.jpg";
+import Chat from "/img/Chat.png";
 import study from "/img/study.jpg";
 import "./project.css";
 
@@ -73,18 +73,18 @@ const Project = () => {
           viewport={{ once: true, amount: 0.5 }}
         >
           <div className="project_item_image">
-            <img src={Event} alt="Event Management System" />
+            <img src={Chat} alt="Mern-Chat-App" />
           </div>
-          <h3>Event Management System</h3>
+          <h3>Mern-Chat-App</h3>
           <small className="text-light">
-            HTML, CSS, JavaScript, SQL, MongoDB
+          React, Express.js, Socket.IO, Node.js
           </small>
           <div className="project_item_btn">
             <a href="https://github.com/sourabhupadhyay" className="btn">
               GitHub
             </a>
             <a
-              href="https://your-live-demo-link.com"
+              href="https://we-chat-app-wjpp.onrender.com/"
               className="btn"
               style={{ marginLeft: "10px" }}
             >
