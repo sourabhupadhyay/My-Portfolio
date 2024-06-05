@@ -77,7 +77,7 @@ const Project = () => {
           </div>
           <h3>Mern-Chat-App</h3>
           <small className="text-light">
-          React, Express.js, Socket.IO, Node.js
+          React, Express.js, Socket.IO, Node.js, MongoDB
           </small>
           <div className="project_item_btn">
             <a href="https://github.com/sourabhupadhyay" className="btn">
