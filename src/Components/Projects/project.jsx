@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import video from "/img/video.jpg";
 import Chat from "/img/Chat.png";
 import study from "/img/study.jpg";
+import weather from "/img/weather.jpeg";
 import "./project.css";
 
 const Project = () => {
@@ -85,6 +86,34 @@ const Project = () => {
             </a>
             <a
               href="https://we-chat-app-wjpp.onrender.com/"
+              className="btn"
+              style={{ marginLeft: "10px" }}
+            >
+              Live Demo
+            </a>
+          </div>
+        </motion.article>
+
+        <motion.article
+          className="project_item"
+          initial={{ opacity: 0, x: -100 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.5, delay: 0.4 }}
+          viewport={{ once: true, amount: 0.5 }}
+        >
+          <div className="project_item_image">
+            <img src={weather} alt="Weather-App" />
+          </div>
+          <h3>Weather-App</h3>
+          <small className="text-light">
+          React, Javascript, Bootstrap, Css, Html 
+          </small>
+          <div className="project_item_btn">
+            <a href="https://github.com/sourabhupadhyay" className="btn">
+              GitHub
+            </a>
+            <a
+              href="https://weatherappbysourabh.netlify.app/"
               className="btn"
               style={{ marginLeft: "10px" }}
             >

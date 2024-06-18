@@ -45,7 +45,7 @@ const About = () => {
               <h5>Degree</h5>
               <small>
                 B.tech. Computer Science <br />
-                <i>Poornima Institute Of Engineering and Technology</i>
+                {/* <i>Poornima Institute Of Engineering and Technology</i> */}
               </small>
             </motion.article>
 
@@ -75,7 +75,7 @@ const About = () => {
               <small>
                 <ul>
                   <li>+91-9783976444</li>
-                  <li>upadhyaysourabh12@gmail.com</li>
+                  {/* <li>upadhyaysourabh12@gmail.com</li> */}
                 </ul>
               </small>
             </motion.article>
